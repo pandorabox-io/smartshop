@@ -103,7 +103,13 @@ smartshop.send_mail=function(owner, pos, item)
       return
    end
    local spos = "("..pos.x..", "..pos.y..", "..pos.z..")"
-   mail.send("DO NOT REPLY", owner, "Out of "..smartshop.get_human_name(item).." at "..spos, "Your smartshop at "..spos.." is out of "..smartshop.get_human_name(item)..". Please restock")
+   mail.send({
+	   src = "DO NOT REPLY",
+	   dst = owner,
+	   subject = "Out of "..smartshop.get_human_name(item).." at "..spos,
+	   body = "Your smartshop at "..spos.." is out of "..smartshop.get_human_name(item)..". Please restock"
+   })
+
 end
 
 
