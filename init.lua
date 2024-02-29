@@ -386,6 +386,7 @@ minetest.register_node("smartshop:shop", {
 	description = "Smartshop",
 	tiles = {"default_chest_top.png^[colorize:#ffffff77^default_obsidian_glass.png"},
 	groups = {choppy = 2, oddly_breakable_by_hand = 1,tubedevice = 1, tubedevice_receiver = 1},
+	is_ground_content = false,
 	drawtype="nodebox",
 	node_box = {type="fixed",fixed={-0.5,-0.5,-0.0,0.5,0.5,0.5}},
 	paramtype2="facedir",
