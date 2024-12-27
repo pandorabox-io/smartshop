@@ -6,16 +6,15 @@ Created by: UjEdwin
 
 Like the title says, this is a smart and easy shop, that will also fit everywhere.
 
-it is a mix of a vending machine, a shop, item frames and light.
+It is a mix of a vending machine, a shop, item frames and light.
 
-You can toogle it unlimited or limited if you have give or creative
-(unlimited will not take or add stuff to its inventory)
+The owner can toggle it between unlimited and limited supply,
+if they have `give` or `creative` privs.
 
-The "All" button will lime your stock to the inventory or and the giveline, its on as default.
-
-It also works with pipeworks and aliveai
+Smartshops work with pipeworks and aliveai.
 
 Additions by gpcf:
   - Mail support: Smartshops send mails out if stock is empty
   - Statistics: Smartshops make statistics on prices and stock
   - Smartshops only accept items they sell via pipeworks
+
