@@ -1,0 +1,22 @@
+# The interval at which to write out a report file to disk.
+# Managers can trigger an export manually with /smreport
+# See smartshop.report_priv setting.
+# Defaults to 0 -> never.
+smartshop.report_interval (Interval to export report file) int 0 0 65
+
+# Players with this priv may use /smreport.
+# Set to "interact" to allow all players
+# Defaults to "server".
+smartshop.report_priv (Priv needed to execute /smreport) string server
+
+# Whether to include offers in statistics for which the payment isn't
+# minegeld.
+# When true, average price calculations are falsely lower.
+# When false, statistics don't reflect all available stock.
+# For historical reasons this defaults to true.
+smartshop.include_mg_only (Count stock of non minegeld offers) bool true
+
+# If you want to use smartshop without the statistics, set this to "true".
+# Defaults to "false".
+smartshop.disable_statistics (Disable all statistics) bool false
+
