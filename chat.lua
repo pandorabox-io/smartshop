@@ -57,7 +57,7 @@ core.register_chatcommand("smstats", {
 -- shop entities and sometimes banner nodes without entities.
 -- Calling this command fixes both situations.
 core.register_chatcommand("smartshop_fix_entities", {
-	description = S("Recreates the smartshop-visuals in your area."),
+	description = S("Recreates the smartshop-visuals in your surroundings."),
 	func = function(player_name)
 		local player = core.get_player_by_name(player_name)
 		if not player then

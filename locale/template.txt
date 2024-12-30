@@ -7,7 +7,7 @@ Usage: /smstats <item name>=
 No stats on @1.=
 Number of items: @1@@Number of shops offering item: @2=
 @@Average price: @1=
-Recreates the smartshop-visuals in your area.=
+Recreates the smartshop-visuals in your surroundings.=
 Removed @1 smartshop entities and refreshed @2 shops in @3 ms.=
 Error: The owner's stock is full, can't receive, exchange aborted.=
 Error: @1 is sold out.=
@@ -30,3 +30,4 @@ Statistics are disabled.=
 Could not write to file.=
 Report file written.=
 Unknown Item=
+
