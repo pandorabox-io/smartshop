@@ -31,11 +31,7 @@ smartshop.item_prices = {}
 local worldpath = smartshop.worldpath
 
 -- Load item stats
-do
-	if smartshop.disable_statistics then
-		return
-	end
-
+local function load_statistics()
 	local data
 	local file = io.open(worldpath .. "smartshop_itemcounts.txt", "r")
 	if file then
@@ -55,6 +51,10 @@ do
 		file:close()
 	end
 end
+if not smartshop.disable_statistics then
+	load_statistics()
+end
+
 
 -- Sum up all available item_name at every pos
 function smartshop.get_item_count(item_name)
