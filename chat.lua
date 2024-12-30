@@ -19,7 +19,7 @@ end)
 
 core.register_chatcommand("smreport", {
 	description = S("Write number of items being sold to report file."),
-	privs = { smartshop.report_priv },
+	privs = { [smartshop.report_priv] = true },
 	func = function()
 		return smartshop.report()
 	end,
