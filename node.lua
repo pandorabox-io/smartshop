@@ -291,14 +291,15 @@ print('allow_metadata_inventory_move')
 			return 0
 		end
 
+		local to_stack = inv:get_stack(to_list, to_index)
+		local from_stack = inv:get_stack(from_list, from_index)
+		from_stack:set_count(count)
 		if from_list == "main" then
-			if inv:get_stack(to_list, to_index):get_name()
-				== inv:get_stack(from_list, from_index):get_name()
+			if to_stack:get_name() == from_stack:get_name()
 			then
-				inv:add_item(to_list, inv:get_stack(from_list, from_index))
+				inv:add_item(to_list, from_stack)
 			else
-				inv:set_stack(to_list, to_index, inv:get_stack(from_list, from_index))
-				inv:set_stack(from_list, from_index, inv:get_stack(from_list, from_index))
+				inv:set_stack(to_list, to_index, from_stack)
 			end
 			return 0
 		end
