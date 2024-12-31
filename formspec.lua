@@ -34,13 +34,13 @@ smartshop.showform = function(pos, player)
 			end
 			gui = gui
 				.. "]button[6,1;2.2,1;togglelimit;" .. FS("Toggle limit") .. "]"
-				.. "tooltip[togglelimit;" .. FS("Toggle limit of stock.") .. ";]"
+				.. "tooltip[togglelimit;" .. FS("Toggle limit of stock.") .. "]"
 		else
 			gui = "size[8,10]"
 		end
 		gui = gui
 			.. "button_exit[6,0;1.5,1;customer;" .. FS("Customer") .. "]"
-			.. "tooltip[customer;" .. FS("View as customer.") .. ";]"
+			.. "tooltip[customer;" .. FS("View as customer.") .. "]"
 			.. "label[0,0.2;" .. FS("Item:") .. "]"
 			.. "label[0,1.2;" .. FS("Price:") .. "]"
 			.. inv_pos .. "give1;2,0;1,1;]"
