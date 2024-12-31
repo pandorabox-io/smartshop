@@ -1,5 +1,9 @@
 
--- TODO: what about updating info when items are removed via injectors?
+-- NOTE: Removing for sale items using a filter injector will not
+--       update infotext and statistcs. Since there is no way to
+--       reliably detect if a player is removing items or a
+--       filter injector and updating info on every inventory take
+--       action seems overkill. At least when statistics are activated.
 
 smartshop.tube = {
 	input_inventory = "main",
