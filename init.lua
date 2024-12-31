@@ -1,6 +1,6 @@
 
 smartshop = {
-	version = 20241228.005800,
+	version = 20241231.1814,
 	worldpath = core.get_worldpath() .. "/",
 	modpath = core.get_modpath(core.get_current_modname()) .. "/",
 	S = core.get_translator(core.get_current_modname()),
