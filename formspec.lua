@@ -21,7 +21,7 @@ smartshop.showform = function(pos, player)
 	if smartshop.treat_as_customer[player_name] then
 		is_manager = false
 	end
-	local gui, stack
+	local gui
 	if is_manager then
 		-- Manager has been here to refill
 		meta:set_int("alerted", 0)
@@ -59,6 +59,16 @@ smartshop.showform = function(pos, player)
 			.. "listring[current_player;main]"
 	else
 		-- Customer view
+		local stack
+		local function count_to_string(a_stack)
+			local count = tostring(a_stack:get_count())
+			return string.rep("\b", 5 - #count) .. count
+		--	if 10 > count then return "\b\b\b\b" .. count end
+		--	if 100 > count then return "\b\b\b" .. count end
+		--	if 1000 > count then return "\b\b" .. count end
+		--	if 10000 > count then return "\b" .. count end
+		--	return tostring(count)
+		end
 		gui = ""
 			.. "size[8,6]"
 			.. "list[current_player;main;0,2.2;8,4;]"
@@ -68,22 +78,22 @@ smartshop.showform = function(pos, player)
 		stack = inv:get_stack("pay1", 1)
 		gui = gui
 			.. "item_image_button[2,1;1,1;" .. stack:get_name()
-			.. ";buy1;\n\n\b\b\b\b\b" .. stack:get_count() .. "]"
+			.. ";buy1;\n\n" .. count_to_string(stack) .. "]"
 			.. inv_pos .. "give2;3,0;1,1;]"
 		stack = inv:get_stack("pay2", 1)
 		gui = gui
 			.. "item_image_button[3,1;1,1;" .. stack:get_name()
-			.. ";buy2;\n\n\b\b\b\b\b" .. stack:get_count() .. "]"
+			.. ";buy2;\n\n" .. count_to_string(stack) .. "]"
 			.. inv_pos .. "give3;4,0;1,1;]"
 		stack = inv:get_stack("pay3", 1)
 		gui = gui
 			.. "item_image_button[4,1;1,1;" .. stack:get_name()
-			.. ";buy3;\n\n\b\b\b\b\b" .. stack:get_count() .. "]"
+			.. ";buy3;\n\n" .. count_to_string(stack) .. "]"
 			.. inv_pos .. "give4;5,0;1,1;]"
 		stack = inv:get_stack("pay4", 1)
 		gui = gui
 			.. "item_image_button[5,1;1,1;" .. stack:get_name()
-			.. ";buy4;\n\n\b\b\b\b\b" .. stack:get_count() .. "]"
+			.. ";buy4;\n\n" .. count_to_string(stack) .. "]"
 	end
 	core.after(0.1, core.show_formspec, player_name, "smartshop.showform", gui)
 end
