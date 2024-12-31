@@ -7,6 +7,8 @@
 
 local S = smartshop.S
 
+smartshop.db_version = 5
+
 -- Interval for globalstep to write report file.
 smartshop.report_interval = tonumber(core.settings:get(
 	"smartshop.report_interval")) or 0
@@ -30,6 +32,68 @@ smartshop.item_prices = {}
 
 local worldpath = smartshop.worldpath
 
+-- Attempt to update databas to reduce garbage.
+local function update_database()
+	local new_stats = { smartshop_db_version = { version = smartshop.db_version } }
+	local new_prices = {}
+	local next_index
+	-- smartshop.item_stats[item_name][spos] = count
+	for item_name, dict in pairs(smartshop.item_stats) do
+		next_index = 1
+		for spos, count in pairs(dict) do
+			if ")" == spos:sub(-1) then
+				-- Give the position any unique index.
+				-- There is a high probability that next time
+				-- the corresponding shop is updated, this will
+				-- be rectified, if the shop even still exists.
+				spos = spos .. next_index
+				next_index = next_index + 1
+				-- only log info once per item and position combo
+				if 6 == next_index then
+print('-------------'.. next_index)
+					core.log("info", "[smartshop] detected unusual occurance in "
+						.. "item-count database for " .. item_name .. " at "
+						.. spos:sub(1, -2))
+				end
+			end
+			if not new_stats[item_name] then
+				new_stats[item_name] = {}
+			end
+			new_stats[item_name][spos] = count
+		end
+	end
+	smartshop.item_stats = new_stats
+
+	-- smartshop.item_prices[item_name][spos] = price
+	for item_name, dict in pairs(smartshop.item_prices) do
+		next_index = 1
+		for spos, price in pairs(dict) do
+			if ")" == spos:sub(-1) then
+				-- Give the position any unique index.
+				-- There is a high probability that next time
+				-- the corresponding shop is updated, this will
+				-- be rectified, if the shop even still exists.
+				spos = spos .. next_index
+				next_index = next_index + 1
+				-- only log info once per item and position combo
+				if 6 == next_index then
+					core.log("info", "[smartshop] detected unusual occurance in "
+						.. "item-price database for " .. item_name .. " at "
+						.. spos:sub(1, -2))
+				end
+			end
+			if not new_prices[item_name] then
+				new_prices[item_name] = {}
+			end
+			new_prices[item_name][spos] = price
+		end
+	end
+	smartshop.item_prices = new_prices
+	smartshop.save_counts()
+	smartshop.save_prices()
+end
+
+
 -- Load item stats
 local function load_statistics()
 	local data
@@ -49,6 +113,10 @@ local function load_statistics()
 			smartshop.item_prices = data
 		end
 		file:close()
+	end
+
+	if not smartshop.item_stats.version then
+		update_database()
 	end
 end
 
