@@ -207,7 +207,6 @@ core.register_node("smartshop:shop", {
 	end,
 
 	on_destruct = function(pos)
-print('on_destruct')
 		smartshop.update_entities(pos, "clear")
 		smartshop.remove_pos(core.pos_to_string(pos))
 	end,
