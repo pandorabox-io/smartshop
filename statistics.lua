@@ -51,9 +51,6 @@ local function load_statistics()
 		file:close()
 	end
 end
-if not smartshop.disable_statistics then
-	load_statistics()
-end
 
 
 -- Sum up all available item_name at every pos
@@ -238,7 +235,7 @@ local have_warned_count = false
 function smartshop.itemsatpos(...)
 	if not have_warned_count then
 		have_warned_count = true
-		core.log("warning", "Depricated use of smartshop.itemsatpos(). "
+		core.log("warning", "[smartshop] Depricated use of smartshop.itemsatpos(). "
 			.. "Use smartshop.set_count_pos() instead\n"
 			.. debug.traceback())
 	end
@@ -264,7 +261,7 @@ local have_warned_price = false
 function smartshop.itempriceatpos(...)
 	if not have_warned_price then
 		have_warned_price = true
-		core.log("warning", "Depricated use of smartshop.itempriceatpos(). "
+		core.log("warning", "[smartshop] Depricated use of smartshop.itempriceatpos(). "
 			.. "Use smartshop.set_price_pos() instead\n"
 			.. debug.traceback())
 	end
@@ -305,5 +302,10 @@ if smartshop.report_interval > 0 then
 			timer = 0
 		end
 	end)
+end
+
+
+if not smartshop.disable_statistics then
+	load_statistics()
 end
 

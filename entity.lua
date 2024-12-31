@@ -72,7 +72,7 @@ local have_warned = false
 function smartshop.update(...)
 	if not have_warned then
 		have_warned = true
-		core.log("warning", "Depricated use of smartshop.update(). "
+		core.log("warning", "[smartshop] Depricated use of smartshop.update(). "
 			.. "Use smartshop.update_entities() instead\n"
 			.. debug.traceback())
 	end
