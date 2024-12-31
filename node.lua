@@ -263,7 +263,6 @@ core.register_node("smartshop:shop", {
 
 	allow_metadata_inventory_move = function(pos, from_list, from_index,
 											to_list, to_index, count, player)
-print('allow_metadata_inventory_move')
 		local player_name = player:get_player_name()
 		local is_manager = smartshop.is_manager(pos, player_name)
 		if is_manager and smartshop.treat_as_customer[player_name] then

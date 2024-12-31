@@ -149,7 +149,6 @@ smartshop.receive_fields = function(player, fields)
 		return
 
 	elseif fields.quit then
-print("got quit field")
 		smartshop.update_info(pos)
 		if owner == player_name
 			or core.check_player_privs(player, { protection_bypass = true })
@@ -168,7 +167,6 @@ print("got quit field")
 		if fields["buy" .. i] then break end
 	end
 	if not fields["buy" .. n] then
-print('escape pressed??')
 		return
 	end
 
