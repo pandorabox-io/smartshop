@@ -129,7 +129,6 @@ function smartshop.remove_pos(spos)
 
 	local purge_positions = { spos }
 	local do_five = ")" == spos:sub(-1)
-print(dump(do_five))
 	if do_five then
 		for i = 1, 4 do
 			table.insert(purge_positions, spos .. i)
@@ -169,29 +168,29 @@ print(dump(do_five))
 	for item_name in pairs(affected_items) do
 		preserved_positions = {}
 		has_preserved = false
-		for apos, price in pairs(smartshop.item_prices[item_name]) do
-			delete_position = false
-			for _, purge_pos in ipairs(purge_positions) do
-				if apos == purge_pos then
-					delete_position = true
+		if smartshop.item_prices[item_name] then
+			for apos, price in pairs(smartshop.item_prices[item_name]) do
+				delete_position = false
+				for _, purge_pos in ipairs(purge_positions) do
+					if apos == purge_pos then
+						delete_position = true
+					end
 				end
-			end
-			if not delete_position then
-				-- Preserve
-				has_preserved = true
-				preserved_positions[apos] = price
+				if not delete_position then
+					-- Preserve
+					has_preserved = true
+					preserved_positions[apos] = price
+				end
 			end
 		end
 		if has_preserved then
 			new_prices[item_name] = preserved_positions
 		end
 	end
-print(dump(smartshop.item_stats))
-print(dump(smartshop.new_stats))
 	smartshop.item_stats = new_stats
 	smartshop.item_prices = new_prices
-	--smartshop.save_counts()
-	--smartshop.save_prices()
+	smartshop.save_counts()
+	smartshop.save_prices()
 end
 
 
@@ -223,7 +222,6 @@ end
 
 -- Set number of items of type 'item' sold at position 'spos'
 function smartshop.set_count_pos(spos, item_name, count)
-print('set_count_pos ' .. spos)
 	if smartshop.disable_statistics then
 		return
 	end
@@ -237,7 +235,7 @@ end
 
 -- Depricated: will be removed at some point
 local have_warned_count = false
-smartshop.itemsatpos = function(...)
+function smartshop.itemsatpos(...)
 	if not have_warned_count then
 		have_warned_count = true
 		core.log("warning", "Depricated use of smartshop.itemsatpos(). "
@@ -263,7 +261,7 @@ end
 
 -- Depricated: will be removed at some point
 local have_warned_price = false
-smartshop.itempriceatpos = function(...)
+function smartshop.itempriceatpos(...)
 	if not have_warned_price then
 		have_warned_price = true
 		core.log("warning", "Depricated use of smartshop.itempriceatpos(). "
@@ -301,7 +299,7 @@ end
 if smartshop.report_interval > 0 then
 	local timer = 0
 	core.register_globalstep(function(dtime)
-		timer = timer + dtime;
+		timer = timer + dtime
 		if timer >= smartshop.report_interval then
 			smartshop.report()
 			timer = 0
