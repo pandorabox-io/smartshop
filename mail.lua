@@ -1,19 +1,7 @@
 
 local S = smartshop.S
 
-local wants_table = false
-do
-	-- TODO: this is an ugly work-around to figure out which
-	-- mail mod is used. If somebody sees a cleaner way to
-	-- detect versions/forks, please change this.
-	local success, error = pcall(mail.send, nil, nil, nil, '')
-	if (not success) and error
-		and smartshop.string_contains_string(error,
-			"attempt to index local 'm' (a nil value)")
-	then
-		wants_table = true
-	end
-end
+local wants_table = mail.version and mail.version >= 3
 
 
 function smartshop.send_mail(owner, pos, item_name)
@@ -32,4 +20,3 @@ function smartshop.send_mail(owner, pos, item_name)
 		mail.send(msg.src, owner, msg.subject, msg.body)
 	end
 end
-
