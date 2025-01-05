@@ -1,6 +1,6 @@
 
 smartshop = {
-	version = 20241231.1814,
+	version = 20250105.1036,
 	worldpath = core.get_worldpath() .. "/",
 	modpath = core.get_modpath(core.get_current_modname()) .. "/",
 	S = core.get_translator(core.get_current_modname()),
@@ -27,4 +27,3 @@ end
 
 -- Needs pipeworks to be loaded first
 dofile(MP .. "node.lua")
-
