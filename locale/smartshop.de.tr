@@ -1,0 +1,33 @@
+# textdomain: smartshop
+Allow the use of smreport command.=Erlaubt die Verwendung des smreport Befehls.
+Write number of items being sold to report file.=Zahl der zum Verkauf angebotenen Artikel in Berichtsdatei schreiben.
+Get number of items being sold.=Zahl der zum Verkauf angebotenen Artikel abrufen.
+<item name>=<Artikelname>
+Usage: /smstats <item name>=Verwendung: /smstats <Artikelname>
+No stats on @1.=Keine Statistiken zu @1.
+Number of items: @1@nNumber of shops offering item: @2=Anzahl Artikel: @1@nAnzahl der Läden, die den Artikel anbieten: @2
+@nAverage price: @1=@nDurchschnittspreis: @1
+Recreates the smartshop-visuals in your surroundings.=Erstellt die Smartshop-Bilder in deiner Umgebung neu.
+Removed @1 smartshop entities and refreshed @2 shops in @3 ms.=Entfernte @1 Smartshop-Entitäten und aktualisierte @2 Läden in @3 ms.
+Error: The owner's stock is full, can't receive, exchange aborted.=Fehler: Das Inventar des Besitzers ist voll, kann nichts empfangen werden, Umtausch abgebrochen.
+Error: @1 is sold out.=Fehler: @1 ist ausverkauft.
+Error: You don't have enough in your inventory to buy this, exchange aborted.=Fehler: Du hast nicht genug in deinem Inventar, um dies zu kaufen, Umtausch abgebrochen.
+Error: Your inventory is full, exchange aborted.=Fehler: Dein Inventar ist voll, Umtausch abgebrochen.
+Your stock is limited.=Dein Lagerbestand ist begrenzt.
+Your stock is unlimited.@nPaid items are trashed.=Dein Lagerbestand ist unbegrenzt.@nBezahlte Artikel werden gelöscht.
+Toggle limit=Limit
+Toggle limit of stock.=Begrenzung des Lagerbestandes umschalten.
+Customer=Kunde
+View as customer.=Kundenansicht.
+Item:=Artikel
+Price:=Preis:
+Out of @1 at @2=Keine @1 mehr bei @2
+Your smartshop at @1 is out of @2. Please restock.=Dein Smartshop bei @1 hat keine @2 mehr. Bitte nachfüllen.
+(Smartshop of @1) Purchases left:=(Smartshop von @1) Verbleibende Einkäufe:
+(Smartshop of @1) Stock is unlimited.=(Smartshop von @1) Der Vorrat ist unbegrenzt.
+Shop of @1=Laden von @1
+Statistics are disabled.=Statistiken sind deaktiviert.
+Could not write to file.=Konnte nicht in Datei schreiben.
+Report file written.=Berichtsdatei geschrieben.
+Unknown Item=Unbekannter Artikel
+

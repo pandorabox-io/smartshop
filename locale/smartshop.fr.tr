@@ -1,0 +1,33 @@
+# textdomain: smartshop
+Allow the use of smreport command.=Autoriser l'utilisation de la commande smreport.
+Write number of items being sold to report file.=Écrire le nombre d'articles à vendre dans le fichier de rapport.
+Get number of items being sold.=Obtenir le nombre d'articles à vendre.
+<item name>=<nom de l'article>
+Usage: /smstats <item name>=Utilisation : /smstats <nom de l'article>
+No stats on @1.=Aucune statistique sur @1.
+Number of items: @1@nNumber of shops offering item: @2=Nombre d'articles : @1@nNombre de boutiques proposant l'article : @2
+@nAverage price: @1=@nPrix moyen : @1
+Recreates the smartshop-visuals in your surroundings.=Recréer les visuels de smartshop dans ta région.
+Removed @1 smartshop entities and refreshed @2 shops in @3 ms.=Suppression de @1 entités de smartshop et actualisation de @2 boutiques en @3 ms.
+Error: The owner's stock is full, can't receive, exchange aborted.=Erreur : le stock du propriétaire est plein, impossible de recevoir, échange annulé.
+Error: @1 is sold out.=Erreur : @1 est épuisé.
+Error: You don't have enough in your inventory to buy this, exchange aborted.=Erreur : tu n'as pas assez de stock dans ton inventaire pour acheter ceci, échange annulé.
+Error: Your inventory is full, exchange aborted.=Erreur : ton inventaire est plein, échange annulé.
+Your stock is limited.=Ton stock est limité.
+Your stock is unlimited.@nPaid items are trashed.=Ton stock est illimité.@nLes articles payés sont mis à la poubelle.
+Toggle limit=Limite
+Toggle limit of stock.=Basculer la limite de stock.
+Customer=Client
+View as customer.=Afficher en tant que client.
+Item:=Article :
+Price:=Prix :
+Out of @1 at @2=Le stock de @1 à @2 est épuisé
+Your smartshop at @1 is out of @2. Please restock.=Ton smartshop à @1 est épuisé de @2. S'il te plaît, remplis-le.
+(Smartshop of @1) Purchases left:=(Smartshop de @1) Achats restants :
+(Smartshop of @1) Stock is unlimited.=(Smartshop de @1) Le stock est illimité.
+Shop of @1=Boutique de @1
+Statistics are disabled.=Les statistiques sont désactivées.
+Could not write to file.=Impossible d'écrire le fichier.
+Report file written.=Fichier de rapport écrit.
+Unknown Item=Article Inconnu
+

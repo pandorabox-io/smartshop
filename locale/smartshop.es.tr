@@ -1,0 +1,33 @@
+# textdomain: smartshop
+Allow the use of smreport command.=Permite el uso del comando smreport.
+Write number of items being sold to report file.=Escribe la cantidad de artículos que se están vendiendo en el archivo de informe.
+Get number of items being sold.=Obtener la cantidad de artículos que se están vendiendo.
+<item name>=<nombre del artículo>
+Usage: /smstats <item name>=Uso: /smstats <nombre del artículo>
+No stats on @1.=No hay estadísticas sobre @1.
+Number of items: @1@nNumber of shops offering item: @2=Número de artículos: @1@nNúmero de tiendas que ofrecen el artículo: @2
+@nAverage price: @1=@nPrecio promedio: @1
+Recreates the smartshop-visuals in your surroundings.=Recrea las imágenes de smartshop en tu alrededor.
+Removed @1 smartshop entities and refreshed @2 shops in @3 ms.=Se eliminaron @1 entidades de smartshop y se actualizaron @2 tiendas en @3 ms.
+Error: The owner's stock is full, can't receive, exchange aborted.=Error: el depósito del propietario está lleno, no se puede recibir más, se canceló el intercambio.
+Error: @1 is sold out.=Error: @1 está agotado.
+Error: You don't have enough in your inventory to buy this, exchange aborted.=Error: no tienes suficiente en tu inventario para comprar esto, se canceló el intercambio.
+Error: Your inventory is full, exchange aborted.=Error: tu inventario está lleno, se canceló el intercambio.
+Your stock is limited.=Tu depósito es limitado.
+Your stock is unlimited.@nPaid items are trashed.=Tu depósito es ilimitado.@nLos artículos pagados se eliminan.
+Toggle limit=Limite
+Toggle limit of stock.=Activar o desactivar límite del depósito.
+Customer=Cliente
+View as customer.=Ver como cliente.
+Item:=Artículo:
+Price:=Precio:
+Out of @1 at @2=Agotado de @1 en @2
+Your smartshop at @1 is out of @2. Please restock.=Tu smartshop en @1 está agotada de @2. Por favor, equipa de nuevo.
+(Smartshop of @1) Purchases left:=(Smartshop de @1) Compras restantes:
+(Smartshop of @1) Stock is unlimited.=(Smartshop de @1) El deposíto es ilimitado.
+Shop of @1=Tienda de @1
+Statistics are disabled.=Las estadísticas están deshabilitadas.
+Could not write to file.=No se pudo escribir el archivo.
+Report file written.=El archivo fue escrito .
+Unknown Item=Artículo Desconocido
+

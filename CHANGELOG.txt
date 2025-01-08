@@ -1,0 +1,59 @@
+202412 (SwissalpS) Reworks the entire mod. First time it has a version indicator
+	  in global smartshop.version. Before that there was just the "4r" indication
+	  in Readme.txt and that never seemed to have been updated since 20171118.
+	Significant changes:
+	- smartshop.itemstats -> smartshop.item_stats
+	- smartshop.itemprices -> smartshop.item_prices
+	- smartshop.stuffsold -> removed
+	- smartshop.itemsatpos() -> smartshop.set_count_pos() (old will still work)
+	- smartshop.itempriceatpos() -> smartshop.set_price_pos() (old will still work)
+	- Database of prices and items has changed the pos format slightly to take into
+	  account the four slots. If you have a script/mod using smartshop's database
+	  you may want to adapt: old pos '(<x>,<y>,<z>)' new format '(<x>,<y>,<z>)<i>'
+	  where 'i' is one of 1, 2, 3 or 4. Old style entries are removed if the shop is
+	  wrenched, jumped or the node is dug up.
+	- /smreport is limited by priv.
+	- Report is no longer automatically exported by default, server setting is provided
+	  to restore old behaviour.
+	- Statistics can be turned off entirely, this does not influence the infotext stats.
+	Mentionable changes:
+	- Code restructured and uses functions of this decade (entities mainly).
+	  Code split into multiple files.
+	- Added mod.conf, settingtypes.txt and .luacheckrc. Moved Readme.txt to .md.
+	- Translation support added.
+	- Entities now have the same order no matter in which of the four 'allowed'
+	  directions the shop is facing.
+	- /smartshop_fix_entities added.
+	- Entities are fully removed when shop is dug, wrenched or jumped with jumpdrive.
+	- Shops are now blast resistant and can't be moved with mvps compliant nodes.
+	- Statistics are updated when shop is dug, wrenched or jumped with jumpdrive.
+	- Statistics can be set to not include non minegeld sales in stock-count.
+	  You may want to reset your statistcs anyway after installing this version.
+	  Shops will be re-added whenever a manager closes the formspec, places
+	  wrenched shop or jumps them.
+	- Actually migrate pre-ghost shops - probably too late now anyway.
+	- Client view has been tweaked to show numbers better.
+	- Administrator view has improved to better show unlimited storage messages.
+	- 50 and 100 minegeld notes and 5, 10 and 25 cent coins are now also recognized.
+	  (This only has an effect on statistics.)
+	Other notes:
+	- It was decided not to move to modstorage in this re-write. That is something
+	  for a later update should it be requested.
+	- It was decided not to add an option to disallow non-mg payments. This would
+	  take away a lot of the flexibility of the shop and is only interesting for a few
+	  commerce oriented servers.
+20241227 (SwissalpS) Cleans up whitespace and a few minor syntactical non-critical errors.
+20240229 (SwissalpS) Adds is_ground_content field to shop node.
+20190303 (Thomas) Creates branch for webmail support.
+20150513 (Gabriel) Automatic report and tagged mod as "working".
+20180510 (Gabriel) Basic statistics added.
+20171120 (Gabriel) Sellall function removed.
+20171118 (Gabriel) Convert to using 'ghost' items in give and pay inventories.
+
+???????? Additions by gpcf (Gabriel):
+  - Mail support: Smartshops send mails out if stock is empty.
+  - Statistics: Smartshops make statistics on prices and stock.
+  - Smartshops only accept items they sell via pipeworks.
+
+???????? Created by: UjEdwin
+
